@@ -13,16 +13,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Send email
     if (mail($to, $subject, $body)) {
         // Email sent successfully
-        header("Location: thankyou.html"); // Redirect to thank you page
+        header("Location: ../../thankyou.html"); // Redirect to thank you page
         exit;
     } else {
         // Failed to send email
-        header("Location: error.html"); // Redirect to error page
+        header("Location: ../../error.html"); // Redirect to error page
         exit;
     }
 } else {
     // If not a POST request, redirect to error page
-    header("Location: error.html"); // Redirect to error page
+    header("Location: ../../error.html"); // Redirect to error page
     exit;
 }
 ?>
