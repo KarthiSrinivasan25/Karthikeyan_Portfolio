@@ -534,18 +534,19 @@ span {
 }
 
 .close {
-    color: #aaa;
+    color: black;
     font-size: 28px;
     font-weight: bold;
     position: absolute;
     right: 20px;
     top: 30px;
     cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.1s ease;
 }
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: red;
     text-decoration: none;
 }
 
@@ -790,7 +791,6 @@ b{
     }
 
     .click-button {
-       
         transition: transform 0.1s ease, background-color 0.1s ease;
     }
     
