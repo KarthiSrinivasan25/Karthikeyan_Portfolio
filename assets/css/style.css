@@ -20,10 +20,10 @@
 .spinner {
     width: 80px;
     height: 80px;
-    border: 8px solid #333333; /* Dark border */
-    border-top: 8px solid #ff3300; /* Orange border for spinner */
+    border: 8px solid #333333;
+    border-top: 8px solid #ff3300; 
     border-radius: 50%;
-    animation: spin 1s linear infinite; /* Spin animation */
+    animation: spin 1s linear infinite; 
 }
   
 #loading-screen p {
@@ -387,81 +387,66 @@ header input{
     padding-top: 100px;
 }
 
-.listSkill{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px 20px;
+.listSkill {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 100px; 
+    padding: 50px;
     border-bottom: 5px solid #dce1e4;
-    padding-bottom: 50px;
-}
 
-.listSkill .evaluate{
-    width: 100%;
-    height: 20px;
-    box-shadow: var(--box-shadow);
-    border-radius: 10px;
-    margin-top: 20px;
+}
+.skillitem {
     position: relative;
+    text-align: center;
 }
 
-.listSkill .evaluate::before{
+.circle {
+    width: 130px; 
+    height: 130px; 
+    border-radius: 50%;
+    background: radial-gradient(circle closest-side, #fff 80%, transparent 81%), conic-gradient(#ddd 0% 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 1.2rem; 
+    color: #fff; 
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); 
+    
+}
+.animate .circle {
+    animation: fill 1s ease-out forwards, rotate 2s linear;
+}
+.icon-skill {
     position: absolute;
-    height: 100%;
-    width: var(--point);
-    background-image: var(--gradient-bg);
-    content: '';
-    border-radius: 10px;
+    font-size: 4rem; 
+    color: var(--color);
 }
-
-span {
-    position: absolute;
-    top: 50%; 
-    right: 1%;
-    transform: translate(-50%, -50%); 
-    font-size: 12px; 
-    font-weight: bolder; 
- }
-.icon-color-java {
-    color: brown; 
-    font-size: 200%;
-    font-weight: bolder;
+.skillname {
+    margin-top: 10px; 
+    font-size: 1.2rem; 
+    color: black; 
 }
-
-.icon-color-python {
-    color: blue; 
-    font-size: 200%;
+.skillitem:hover .circle {
+    transform: scale(1.1);
 }
-
-.icon-color-js {
-    color: rgb(173, 173, 8); 
-    font-size: 200%;
+@keyframes fill {
+    0% {
+        background: radial-gradient(circle closest-side, #fff 80%, transparent 81%), conic-gradient(#ddd 0% 0%);
+    }
+    100% {
+        background: radial-gradient(circle closest-side, #fff 80%, transparent 81%), conic-gradient(var(--color) calc(var(--point) * 1%), #ddd calc(var(--point) * 1%));
+    }
 }
-
-.icon-color-mysql {
-    color: rgb(13, 121, 252); 
-    font-size: 200%;
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
-
-.icon-color-html {
-    color: orangered; 
-    font-size: 200%;
-}
-
-.icon-color-css {
-    color: rgb(4, 108, 188); 
-    font-size: 200%;
-}
-
-.icon-color-react {
-    color: rgb(216, 18, 18); 
-    font-size: 200%;
-}
-
-.icon-color-salesforce {
-    color: rgb(0, 221, 255); 
-    font-size: 200%;
-}
-
 .listProject{
     display:grid;
     grid-template-columns: repeat(3, 1fr);
@@ -538,8 +523,8 @@ span {
     font-size: 28px;
     font-weight: bold;
     position: absolute;
-    right: 20px;
-    top: 30px;
+    right: 30px;
+    top: 10px;
     cursor: pointer;
     transition: transform 0.1s ease, background-color 0.1s ease;
 }
@@ -819,7 +804,7 @@ b{
     }
 
     .listSkill{
-        grid-template-columns: 1fr;
+        grid-template-columns: 2fr;
     }
 
     .listProject{
